@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&family=Caveat:wght@600&display=swap');
+
+:root {
+  --primary-accent: #EC9A96;
+  --secondary-accent: #DEA9A6;
+  --whatsapp-green: #33CC66;
+  --bg-color: #ffffff;
+  --bg-light: #f9f9f9;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --font-main: 'Work Sans', sans-serif;
+  --font-script: 'Caveat', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-dark);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header & Navigation */
+.header-wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.header.scrolled {
+  position: fixed;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  color: var(--text-dark);
+}
+
+.header.scrolled .nav-links a, 
+.header.scrolled .logo,
+.header.scrolled .top-bar-contact span {
+  color: var(--text-dark);
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5%;
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: #ffffff;
+}
+
+.header.scrolled .top-bar {
+  border-bottom: 1px solid #eaeaea;
+  color: var(--text-dark);
+}
+
+.top-bar-social a {
+  margin-left: 15px;
+  transition: color 0.3s;
+}
+
+.header.scrolled .top-bar-social a {
+  color: var(--text-dark);
+}
+.header.scrolled .top-bar-social a:hover {
+  color: var(--primary-accent);
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  color: #ffffff;
+}
+
+.logo {
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-family: var(--font-script);
+  color: var(--primary-accent);
+}
+
+.header.scrolled .logo {
+  color: var(--primary-accent);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-accent) !important;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 5%;
+  margin-top: 50px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.hero-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.stars {
+  color: #FFD700;
+  font-size: 1.2rem;
+}
+
+/* Introduction Section */
+.intro-section {
+  position: relative;
+  padding: 100px 5%;
+  text-align: center;
+  background-color: var(--bg-color);
+  overflow: hidden;
+}
+
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15vw;
+  font-weight: 800;
+  color: #f0f0f0;
+  z-index: 0;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.intro-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.script-logo {
+  font-family: var(--font-script);
+  font-size: 4rem;
+  color: var(--primary-accent);
+  line-height: 0.8;
+  margin-bottom: -15px;
+  position: relative;
+  z-index: 2;
+}
+
+.intro-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 30px;
+}
+
+.intro-image-wrapper {
+  margin: 40px auto;
+  max-width: 600px;
+  transform: rotate(-3deg);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  border: 15px solid #fff;
+  transition: transform 0.5s ease;
+}
+
+.intro-image-wrapper:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.intro-image-wrapper img {
+  width: 100%;
+  display: block;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Portfolio Grid Section */
+.portfolio-section {
+  padding: 60px 5%;
+  background-color: var(--bg-light);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-family: var(--font-script);
+  font-size: 2.5rem;
+  color: var(--primary-accent);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 10px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-info {
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.portfolio-info h4 {
+  font-family: var(--font-script);
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+}
+
+.portfolio-info p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Floating Actions */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background-color: var(--whatsapp-green);
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--secondary-accent);
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  z-index: 100;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-accent);
+}
+
+/* Contact Footer */
+.footer-contact {
+  background-color: var(--bg-color);
+  padding: 80px 5% 40px;
+  text-align: center;
+}
+
+.footer-contact h2 {
+  font-family: var(--font-script);
+  font-size: 3rem;
+  color: var(--primary-accent);
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  font-family: var(--font-main);
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-accent);
+}
+
+.btn-primary {
+  background-color: var(--primary-accent);
+  color: #fff;
+  padding: 15px 40px;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #d1827e;
+}
+
+.footer-bottom {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .nav-links {
+    display: none; /* Add hamburger functionality later */
+  }
+  .watermark {
+    font-size: 20vw;
+  }
+  .intro-title {
+    font-size: 1.8rem;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .whatsapp-btn {
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}
