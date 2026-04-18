@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import './App.css';
@@ -15,18 +16,28 @@ const ScrollToTop = () => {
 };
 
 const App = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
     <Router>
       <ScrollToTop />
       <div className="app-container">
         {/* Header */}
         <header className="header">
-          <Link to="/" className="logo">Professional Studio</Link>
-          <nav>
+          <Link to="/" className="logo" onClick={closeMenu}>Professional Studio</Link>
+          
+          <button className="mobile-menu-btn" onClick={toggleMenu}>
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+          
+          <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
             <ul className="nav-links">
-              <li><Link to="/portfolio">Portfolio</Link></li>
-              <li><Link to="/#about">About</Link></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link to="/portfolio" onClick={closeMenu}>Portfolio</Link></li>
+              <li><a href="/#about" onClick={closeMenu}>About</a></li>
+              <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
             </ul>
           </nav>
         </header>

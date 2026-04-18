@@ -9,11 +9,10 @@ const Portfolio = () => {
     <main className="portfolio-page">
       <section className="portfolio-header">
         <motion.h1 
-          className="hero-title"
+          className="hero-title portfolio-title"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          style={{ fontSize: '5rem' }}
         >
           Featured Weddings
         </motion.h1>

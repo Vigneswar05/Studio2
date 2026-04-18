@@ -30,6 +30,8 @@ h4 {
   font-family: var(--font-serif);
   font-weight: 400;
   text-transform: uppercase;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 a {
@@ -81,16 +83,6 @@ button {
 @media (max-width: 768px) {
   .container {
     padding: 0 20px;
-  }
-  .header {
-    flex-direction: column;
-    padding: 1.5rem;
-    gap: 15px;
-  }
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
   }
   .hero-title {
     font-size: 2.5rem;
